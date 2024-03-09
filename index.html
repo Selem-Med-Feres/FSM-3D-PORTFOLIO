@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="public/img/favicon-dark.png" type="image/x-icon"
+    media="(prefers-color-scheme: dark)" />
+  <link rel="shortcut icon" href="public/img/favicon-light.png" type="image/x-icon"
+    media="(prefers-color-scheme: light)" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+  <title>Selem Med Feres</title>
+  <meta property="og:title" content="Selem Med Feres" />
+  <meta name="description" content="Selem Med Feres Portfolio" />
+  <meta property="og:description" content="Selem Med Feres Portfolio" />
+  <meta property="og:url" content="https://feres-selem.tn/new-portfolio" />
+  <meta property="og:image" content="https://feres-selem.tn/new-portfolio/img/og-image.png" />
+  <meta name="twitter:card" content="summary" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-wrapper">
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" asscroll-container>
+    <div class="toggle-bar">
+      <div class="sun-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z" />
+        </svg>
+      </div>
+      <button class="toggle-button">
+        <div class="toggle-circle"></div>
+      </button>
+      <div class="moon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="page-wrapper" asscroll>
+      <section class="hero">
+        <div class="hero-wrapper">
+          <!-- Intro Stuff -->
+          <div class="intro-text">Bienvenue sur mon portfolio !</div>
+          <div class="responsive-scroll-wrapper">
+            <span class="scroll-sign"></span>
+          </div>
+
+          <div class="hero-main">
+            <h1 class="hero-main-title">S. Med Feres</h1>
+            <p class="hero-main-description">
+              Ingénieur Génie des Systèmes Industriels et Logistiques
+            </p>
+          </div>
+
+          <div class="hero-second">
+            <p class="hero-second-subheading first-sub">Selem Med Feres</p>
+            <p class="hero-second-subheading second-sub">Portfolio</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="first-move section-margin"></div>
+
+      <section class="first-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">À propos de moi</h3>
+
+          <p class="section-text">
+            Ingénieur en
+            <strong>Génie des Systèmes Industriels et Logistiques</strong>, je
+            suis passionné par l'optimisation des processus et la gestion
+            efficace des systèmes industriels. Fort d'<strong>un an d'expérience</strong>
+            en tant que
+            <strong>Consultant Technico-fonctionnel spécialisé dans Dynamics 365
+              Business Central</strong>, je m'engage pleinement à mettre en oeuvre mes compétences pour
+            contribuer au succès des projets.
+          </p>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Formation</h3>
+
+          <div class="grid-wrapper">
+            <div class="section-text">
+              <h4>Génie des Systèmes Industriels et Logistiques</h4>
+
+              <p class="details-text">
+                Tunis, Tunisie | Septembre 2020 - Juillet 2023
+              </p>
+
+              <p class="description-text">
+                École Nationale d'Ingénieur de Carthage - ENICarthage |
+                <strong><i>Mention TRÈS BIEN</i></strong>.
+              </p>
+            </div>
+
+            <img src="public/img/enicarthage-light.png" alt="Enicarthage" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid-wrapper">
+            <div class="section-text">
+              <h4>Cycle Préparatoire Technologique</h4>
+
+              <p class="details-text">
+                Tunis, Tunisie | Septembre 2019 - Juillet 2020
+              </p>
+
+              <p class="description-text">
+                Institut Préparatoire aux Études d'Ingénieurs d 'El Manar -
+                IPEIEM.
+              </p>
+            </div>
+
+            <img class="h-75" src="public/img/ipeiem-light.png" alt="IPEIEM" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid-wrapper">
+            <div class="section-text">
+              <h4>Cycle Préparatoire Technologique</h4>
+
+              <p class="details-text">
+                Nabeul, Tunisie | Septembre 2018 - Mai 2019
+              </p>
+
+              <p class="description-text">
+                Institut Préparatoire aux Études d'Ingénieurs de Nabeul -
+                IPEIN.
+              </p>
+            </div>
+
+            <img src="public/img/ipein-light.png" alt="IPEIN" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid-wrapper">
+            <div class="section-text">
+              <h4>Baccalauréat en Sciences Techniques</h4>
+
+              <p class="details-text">
+                Ariana, Tunisie | Septembre 2017 - Juillet 2018
+              </p>
+
+              <p class="description-text">
+                Ariana, Tunisie | Septembre 2017 - Juillet 2018 Lycée El
+                Menzah 6 |
+                <strong><i>Mention BIEN</i></strong>.
+              </p>
+            </div>
+
+            <img class="h-75" src="public/img/menzah-6-light.png" alt="Menzah 6" />
+          </div>
+        </div>
+      </section>
+
+      <div class="second-move section-margin"></div>
+
+      <section class="second-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Expérience professionnelle</h3>
+
+          <div class="section-text">
+            <h4>
+              Consultant technico-fonctionnel spécialisé dans Microsoft
+              Dynamics 365 BC |
+              <strong><i>B2M-IT</i></strong>
+            </h4>
+
+            <p class="details-text">Tunis, Tunisie | Août 2023 - Présent</p>
+
+            <div class="grid-wrapper">
+              <ul class="section-text">
+                <li>
+                  Contribution à <strong>3 projets d'intégration</strong> de
+                  Microsoft BC et
+                  <strong>support d'une base existante</strong>.
+                </li>
+
+                <li>
+                  Contribué à remporter un appel d'offres avec
+                  <strong>une démonstration réussie</strong> chez
+                  <strong><i>Smart Tunisie</i></strong>.
+                </li>
+
+                <li>
+                  Création de la <strong>documentation nécessaire</strong> et
+                  <strong>assistance</strong> aux utilisateurs finaux.
+                </li>
+
+                <li>
+                  <strong>Déplacement en Côte d'Ivoire</strong> pour présenter
+                  une démonstration,
+                  <strong>analyser les écarts fonctionnels</strong> et
+                  <strong>identifier les opportunités d'amélioration</strong>.
+                </li>
+              </ul>
+
+              <img src="public/img/b2m-light.png" alt="B2M-IT" />
+            </div>
+
+            <p class="job-skills">
+              <span class="job-skill">Office</span>
+              <span class="job-skill">SSRS</span>
+              <span class="job-skill">SQL</span>
+              <span class="job-skill">Git</span>
+              <span class="job-skill">AL</span>
+              <span class="job-skill">Azure</span>
+              <span class="job-skill">PowerShell</span>
+              <span class="job-skill">Résolution de problèmes</span>
+              <span class="job-skill">Communication</span>
+              <span class="job-skill">Analyse critique</span>
+              <span class="job-skill">Adaptabilité</span>
+              <span class="job-skill">Gestion du temps</span>
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Stage de fin d'études : Implémentation d'un module de gestion de
+              flotte sur Microsoft Dynamics 365 BC |
+              <strong><i>B2M-IT</i></strong>
+            </h4>
+
+            <p class="details-text">
+              Tunis, Tunisie | Février 2023 - Juillet 2023
+            </p>
+
+            <div class="grid-wrapper">
+              <ul class="section-text">
+                <li>
+                  <strong>Collaboration avec le client</strong> pour
+                  comprendre ses besoins et exigences en matière de gestion de
+                  flotte.
+                </li>
+
+                <li>
+                  <strong>Conception</strong>,
+                  <strong>mise en oeuvre</strong> et
+                  <strong>réalisation des tests</strong> du module de gestion
+                  de flotte.
+                </li>
+
+                <li>
+                  Participation à la <strong>configuration</strong> et à
+                  l'<strong>intégration</strong> du module dans le système
+                  existant.
+                </li>
+              </ul>
+
+              <img src="public/img/b2m-light.png" alt="B2M-IT" />
+            </div>
+
+            <p class="job-skills">
+              <span class="job-skill">Office</span>
+              <span class="job-skill">SSRS</span>
+              <span class="job-skill">AL</span>
+              <span class="job-skill">QQOQCP</span>
+              <span class="job-skill">Sure Step</span>
+              <span class="job-skill">BPMN</span>
+              <span class="job-skill">Gestion de maintenance</span>
+              <span class="job-skill">Lean management</span>
+              <span class="job-skill">Analyse critique</span>
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Développeur web |
+              <strong><i>Softago</i></strong>
+            </h4>
+
+            <p class="details-text">
+              Tunis, Tunisie | Mars 2022 - Janvier 2023
+            </p>
+
+            <div class="grid-wrapper">
+              <ul class="section-text">
+                <li>
+                  Développement Web à temps partiel
+                  <strong>en parrallèl avec les études universitaires</strong>.
+                </li>
+
+                <li>
+                  <strong>Conception</strong>, <strong>développement</strong>,
+                  <strong>maintenance</strong> et
+                  <strong>déploiment</strong> des applications web.
+                </li>
+
+                <li>
+                  Utilisation de plusieurs <strong>technologies</strong> et
+                  <strong>langages de programmation</strong>.
+                </li>
+              </ul>
+
+              <img class="h-75" src="public/img/softago-light.png" alt="Softago" />
+            </div>
+
+            <p class="job-skills">
+              <span class="job-skill">PHP</span>
+              <span class="job-skill">HTML</span>
+              <span class="job-skill">CSS</span>
+              <span class="job-skill">JavaScript</span>
+              <span class="job-skill">WordPress</span>
+              <span class="job-skill">NodeJs</span>
+              <span class="job-skill">UI/UX</span>
+              <span class="job-skill">Autonomie</span>
+              <span class="job-skill">Créativité</span>
+              <span class="job-skill">Polyvalence</span>
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Stage d'été : Implémentation d'un module de contrôle de qualité
+              sur Microsoft BC |
+              <strong><i>B2M-IT</i></strong>
+            </h4>
+
+            <p class="details-text">
+              Tunis, Tunisie | Juillet 2022 - Septembre 2022
+            </p>
+
+            <div class="grid-wrapper">
+              <ul class="section-text">
+                <li>
+                  <strong>Collaboration avec une équipe multidisciplinaire</strong>
+                  pour définir les besoins spécifiques des clients en matière
+                  de contrôle de qualité.
+                </li>
+
+                <li>
+                  <strong>Conception</strong>,
+                  <strong>mise en oeuvre</strong> et
+                  <strong>réalisation des tests rigoureux</strong> d'un module
+                  de contrôle de qualité spécifique sur Microsoft D365 BC.
+                </li>
+              </ul>
+
+              <img src="public/img/b2m-light.png" alt="B2M-IT" />
+            </div>
+
+            <p class="job-skills">
+              <span class="job-skill">AL</span>
+              <span class="job-skill">SSRS</span>
+              <span class="job-skill">Gestion de qualité</span>
+              <span class="job-skill">Communication</span>
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Stage d'été : Maintenance & Qualité |
+              <strong><i>Mercedes-Benz Tunisia</i></strong>
+            </h4>
+
+            <p class="details-text">Tunis, Tunisie | Juin 2021 - Août 2021</p>
+
+            <div class="grid-wrapper">
+              <ul class="section-text">
+                <li>
+                  <strong>Initiation</strong> au monde de l'<strong>industrie</strong>
+                </li>
+                <li>
+                  Étude des différentes <strong>lignes de réparation</strong>
+                </li>
+                <li><strong>Contrôle de la qualité</strong> des services</li>
+              </ul>
+
+              <img class="h-75" src="public/img/mercedes-light.png" alt="Mercedes-Benz" />
+            </div>
+
+            <p class="job-skills">
+              <span class="job-skill">Office</span>
+              <span class="job-skill">Gestion de qualité</span>
+              <span class="job-skill">Gestion de maintenance</span>
+              <span class="job-skill">Gestion de stock</span>
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Projets</h3>
+
+          <div class="section-text">
+            <h4>
+              Conception d'une extension pour l'intégration de BC avec des
+              applications externes
+            </h4>
+
+            <p class="details-text">
+              Gantt · UML · Évaluation des risques · Gestion des erreurs
+            </p>
+
+            <p>
+              Conception d'une extension pour BC facilitant le paramétrage des
+              échanges de données avec des applications externes via
+              l'interface de l'ERP, utilisant des transactions HTTP.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Mise en place d'un système d'évaluation de la réactivité
+              visuelle
+            </h4>
+
+            <p class="details-text">
+              Arduino · SQLite · C# · ASP.NET Web Forms
+            </p>
+
+            <p>
+              Création d'un système dédié à la mesure des délais de réaction
+              des joueurs de Handball, composé d'un microcontrôleur et d'un
+              logiciel de bureau spécialement développé à cet effet.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>
+              Développement d'une solution web d'étude et de suivi des
+              capabilités des procédés (6σ)
+            </h4>
+
+            <p class="details-text">
+              PHP · HTML · JavaScript · CSS · Composer · MySQL · 6 Sigma
+            </p>
+
+            <p>
+              Conception et développement complets d'une solution Web conforme
+              à la méthodologie 6 Sigma, permettant l'étude et le suivi des
+              capabilités des procédés.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>Gestion des ressources humaines (RH) avec ODOO</h4>
+
+            <p class="details-text">ODOO · Ubuntu</p>
+
+            <p>
+              Implémentation et configuration complètes d'ODOO pour la gestion
+              des RH, incluant modules pour effectifs, paie, congés,
+              formation, etc.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-text">
+            <h4>Réalisation d'une application de gestion de parking</h4>
+
+            <p class="details-text">UML · C# · ASP.NET Web Forms · MySQL</p>
+
+            <p>
+              Conception et modélisation complètes de l'architecture
+              logicielle, développement de l'application et mise en place
+              d'une base de données pour stocker et gérer les informations.
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Langues</h3>
+          <div class="section-text">
+            <p><img class="lang-flag" src="public/img/tn-flag.png" alt="Tunisie"> Arabe -</p>
+            <p><img class="lang-flag" src="public/img/fr-flag.png" alt="France"> Français -</p>
+            <p>
+              <img class="lang-flag" src="public/img/uk-flag.png" alt="Angleterre">
+              Anglais - <strong>B2(910 points |TOEIC2022)</strong>
+            </p>
+            <p><img class="lang-flag" src="public/img/du-flag.png" alt="Allemagne"> Allemand - Notions de base</p>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Compétences</h3>
+
+          <div class="section-text">
+            <canvas id="skills"></canvas>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Outils</h3>
+
+          <div class="skills-tools">
+            <img class="skills-tool" src="public/img/al-logo.png" alt="AL">
+            <img class="skills-tool" src="public/img/c-sharp-logo.png" alt="C#">
+            <img class="skills-tool" src="public/img/php-logo.png" alt="PHP">
+            <br>
+            <img class="skills-tool" src="public/img/html-logo.png" alt="HTML">
+            <img class="skills-tool" src="public/img/css-logo.png" alt="CSS">
+            <img class="skills-tool" src="public/img/js-logo.png" alt="JS">
+            <br>
+            <img class="skills-tool" src="public/img/phpmyadmin-logo.png" alt="PhpMyAdmin">
+            <img class="skills-tool" src="public/img/ssrs-logo.png" alt="Microsoft Sql Server">
+            <img class="skills-tool" src="public/img/sql-logo.png" alt="SQL">
+            <br>
+            <img class="skills-tool" src="public/img/microsoft-azure-logo.png" alt="Microsoft Azure">
+            <img class="skills-tool" src="public/img/git-logo.png" alt="Git">
+            <br>
+            <img class="skills-tool" src="public/img/office-logo.png" alt="Microsoft office">
+            <img class="skills-tool" src="public/img/bc-logo.png" alt="Microsoft Business Central">
+            <br>
+            <img class="skills-tool" src="public/img/adobe-cc-logo.png" alt="Adpbe Creative Clous">
+          </div>
+        </div>
+      </section>
+
+      <div class="third-move section-margin"></div>
+
+      <section class="fifth-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Coordonnés</h3>
+
+          <div class="section-text">
+            <p>
+              <strong>Adresse :</strong> 36 Rue Beb Allouge, 2058 Ariana, Tunisie
+            </p>
+
+            <p>
+              <strong>E-mail :</strong>
+              <a href="mailto:med@feres-selem.tn">med@feres-selem.tn</a>
+            </p>
+
+            <p>
+              <strong>Téléphone :</strong>
+              <a href="tel:0021624522738">(+216) 24 522 738</a>
+            </p>
+
+            <p>
+              <strong>LinkedIn :</strong>
+              <a href="https://www.linkedin.com/in/med-feres-selem/" target="_blank"><i class="fa-brands fa-linkedin"
+                  style="color: #0a66c2"></i>
+                /med-feres-selem</a>
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Contact</h3>
+          <div class="section-text">
+            <form>
+              <div class="sender-name">
+                <div class="firstname">
+                  <label for="fname">Prénom :&nbsp<span style="color: red"><sup>*</sup></span></label>
+                  <input type="text" id="fname" name="firstname" placeholder="Prénom" required />
+                </div>
+
+                <div class="lastname">
+                  <label for="lname">Nom :</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Nom" />
+                </div>
+              </div>
+
+              <label for="object">Objet :</label>
+              <input type="text" id="object" name="object" placeholder="Objet" />
+
+              <label for="email">Adresse e-mail :&nbsp<span style="color: red"><sup>*</sup></span></label>
+              <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required />
+
+              <label for="message">Message :&nbsp<span style="color: red"><sup>*</sup></span></label>
+              <textarea rows="15" id="message" name="message" placeholder="Écrivez votre message ici"
+                required></textarea>
+
+              <div class="submit-btn">
+                <input type="submit" value="Envoyer" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="copyright">
+          Copyright &copy; <strong>2024 - Selem Med Feres</strong>, Tous
+          droits réservés.
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
